@@ -88,8 +88,7 @@ class Menu extends React.Component {
     render() {
         return (
             <div>
-                <MenuElement label="home" />
-                <MenuElement label="new game" board={this.props.board}  />
+                <MenuElement label="new game" onClick={() => this.props.board.resetGame()} />
             </div>
     );
     }
@@ -97,7 +96,7 @@ class Menu extends React.Component {
 
 class MenuElement extends React.Component {
     render() {
-        return <div onClick={() => this.props.board.resetGame()}>{this.props.label}</div>
+        return <div onClick={this.props.onClick}>{this.props.label}</div>
     }
 
 
