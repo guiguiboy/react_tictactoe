@@ -41,7 +41,10 @@ class Board extends React.Component {
     }
 
     resetGame() {
-        console.log('fvfvffv');
+        this.setState({
+            squares: Array(9).fill(null),
+            xIsNext: true,
+        });
     }
 
     render() {
@@ -86,7 +89,7 @@ class Menu extends React.Component {
         return (
             <div>
                 <MenuElement label="home" />
-                <MenuElement label="new game"  />
+                <MenuElement label="new game" board={this.props.board}  />
             </div>
     );
     }
@@ -94,7 +97,7 @@ class Menu extends React.Component {
 
 class MenuElement extends React.Component {
     render() {
-        return <div onClick={() => console.log('frfffr')}>{this.props.label}</div>
+        return <div onClick={() => this.props.board.resetGame()}>{this.props.label}</div>
     }
 
 
