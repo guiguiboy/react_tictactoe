@@ -1,0 +1,14 @@
+
+.square {
+    border: 1px solid black;
+    width: 33%;
+    float: left;
+    height: 50px;
+
+}
+
+.board {
+    margin: auto;
+    width: 500px;
+}
+
